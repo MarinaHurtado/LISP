@@ -5,3 +5,5 @@
 (BREADTH AUX 0 MAX))
 (BREADTH (CDR LST) ACT MAX)
 )
+
+; Hay que mandarla llamar (BREADTH LST 0 0)
