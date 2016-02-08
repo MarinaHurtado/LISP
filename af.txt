@@ -1,0 +1,9 @@
+(defun ackermann (m n) "The Ackermann Function"
+(cond ((= m 0) (+ n 1))
+      ((= m 1) (+ n 2))
+      ((= m 2) (+ 3 (* n 2)))
+      ((= m 3) (+ 5 (* 8 (- (expt 2 n) 1))))
+      (t (cond ((= n 0) (ackermann (- m 1) 1))
+               (t (ackermann (- m 1) (ackermann m (- n 1))))
+         ))
+))

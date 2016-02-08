@@ -7,3 +7,6 @@ NIL)
 
 (DEPTH (CDR LST) ACT MAX)
 )
+
+
+; No funciona con ls ni con tree
