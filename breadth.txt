@@ -11,4 +11,3 @@
 (BREADTH1 (CDR LST) ACT)
 )
 
-; Hay que mandarla llamar (BREADTH LST 0 0)
