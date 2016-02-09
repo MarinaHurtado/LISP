@@ -18,4 +18,3 @@
 
 
 ; )LOAD {depth.txt=
-; No funciona con ls ni con tree
