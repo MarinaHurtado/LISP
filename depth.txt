@@ -1,12 +1,21 @@
-(DEFUN DEPTH (LST ACT MAX)
-((NULL LST) ((> ACT MAX) (SETQ MAX ACT)))
-
-(IF (AND (ATOM(CAR LST))(NOT (NULL (CDR LST)))(LISTP (CADR LST))) 
-(DEPTH (CADR LST) (INCQ ACT)  MAX) 
-NIL)
-
-(DEPTH (CDR LST) ACT MAX)
+(DEFUN DEPTH (LST)
+(SETQ MAX 0)
+(DD LST 0)
+(PRINT MAX)
 )
 
 
+
+(DEFUN DD (LST ACT)
+((NULL LST) ((> ACT MAX) (SETQ MAX ACT)))
+
+(SETQ AUX (CAR LST))
+(IF (LISTP AUX) (DD AUX (+ 1 ACT)) NIL )
+
+(DD (CDR LST) ACT )
+
+)
+
+
+; )LOAD {depth.txt=
 ; No funciona con ls ni con tree
