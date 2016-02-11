@@ -1,19 +1,36 @@
 (DEFUN PRINTNIV(LST)
-((NULL LST))
-(SETQ AUX (CAR LST))
-(IF (ATOM AUX) (PRINT AUX) (SETQ LST (APPEND LST AUX)))
-(PRINTNIV (CDR LST))
+	((NULL LST))
+	(SETQ AUX (CAR LST))
+	(IF (ATOM AUX) (PRINT AUX) (SETQ LST (APPEND LST AUX)))
+	(PRINTNIV (CDR LST)))
+
+; ------------------------------------------------------------------
+; Esto imprime marcando los niveles
+
+(DEFUN PRINTLEV(LST)
+	(SETQ CONT 0)
+	(IMP LST)
 )
 
+(DEFUN IMP (LST)
+	((NULL LST))
+	(SETQ LATOM '() LLIST '())
+	(PRIN1 'NIVEL) (PRINT (INCQ CONT))
+	(IMPP LST)
+	(PRINT LATOM)
+	(IMP LLIST)
+)
 
+(DEFUN IMPP(LST)
+	((NULL LST))
+	(SETQ AUX (CAR LST))
+	(IF (ATOM AUX)
+		(SETQ LATOM (INSERT-NTH AUX LATOM (LENGTH LATOM)))
+		(SETQ LLIST (APPEND LLIST AUX)))
+	(IMPP (CDR LST)))
 
 
 
 
 ; )LOAD {printlev.txt=
 
-; )PRINTNIV LS=
-
-; )IF )ATOM )CAR LST== )PRINT )CAR LST== )SETQ LST )APPEND LST )CAR LST====
-
-; )SETQ LST )CDR LST==
